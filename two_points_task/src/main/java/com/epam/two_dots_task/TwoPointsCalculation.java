@@ -10,7 +10,8 @@ import com.epam.two_dots_task.view.type.ConsoleSolveViewer;
 
 public class TwoPointsCalculation {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+        Calculator calculator = Calculator.getCalculator();
+
         DataStorage dataStorage = new EntityDataStorage();
         SolveViewer solveViewer = new ConsoleSolveViewer();
 

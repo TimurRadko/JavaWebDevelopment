@@ -3,6 +3,22 @@ package com.epam.two_dots_task.logic;
 import com.epam.two_dots_task.data.entity.Point;
 
 public class Calculator {
+    private static volatile Calculator calculator;
+
+    private Calculator() {}
+
+    public static synchronized Calculator getCalculator() {
+        Calculator localCalculator = calculator;
+        if (localCalculator == null) {
+            synchronized (Calculator.class) {
+                localCalculator = calculator;
+                if (localCalculator == null) {
+                    calculator = localCalculator = new Calculator();
+                }
+            }
+        }
+        return localCalculator;
+    }
 
     public Point findingCloserToOriginPoint(Point[] points) {
         Point[] pointsWithAddingDistance = addDistanceToEveryPoint(points);

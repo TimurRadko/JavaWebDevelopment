@@ -17,7 +17,7 @@ public class TwoPointsCalculationTest {
 
     @Test
     public void shouldCorrectFindCloserPoint() {
-        Calculator abstractCalculator = new Calculator();
+        Calculator abstractCalculator = Calculator.getCalculator();
         Assert.assertEquals(closerPoint, abstractCalculator.findingCloserToOriginPoint(checkingPoints));
     }
 
