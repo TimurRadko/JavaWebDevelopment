@@ -1,19 +1,20 @@
-package com.epam.two_dots_task.data.entity;
+package com.epam.two.dots.task.data.entity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class PointFactoryImplementation implements PointFactory {
+public class PointFactoryImpl implements PointFactory {
+    private static final int MAX_COUNT_POINTS = 2;
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    private final int[] creatingPoints = new int[2];
+    private final int[] creatingPoints = new int[MAX_COUNT_POINTS];
     private int countArraySize = 0;
 
     public Point createPoint() {
         System.out.println("Enter coordinate (first coordinate X, second Y):");
         int countingCorrectlyEnteringNumbers = 0;
         countArraySize = 0;
-        while (countingCorrectlyEnteringNumbers < 2) {
+        while (countingCorrectlyEnteringNumbers < MAX_COUNT_POINTS) {
             try {
                 String numberInString = reader.readLine();
                 if (checkingCorrectlyEnteringNumber(numberInString)) {

@@ -1,4 +1,4 @@
-package com.epam.two_dots_task.data.entity;
+package com.epam.two.dots.task.data.entity;
 
 public interface PointFactory {
     Point createPoint();

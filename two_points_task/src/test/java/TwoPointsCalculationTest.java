@@ -1,5 +1,5 @@
-import com.epam.two_dots_task.data.entity.Point;
-import com.epam.two_dots_task.logic.Calculator;
+import com.epam.two.dots.task.data.entity.Point;
+import com.epam.two.dots.task.logic.Calculator;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,7 +17,7 @@ public class TwoPointsCalculationTest {
 
     @Test
     public void shouldCorrectFindCloserPoint() {
-        Calculator abstractCalculator = Calculator.getCalculator();
+        Calculator abstractCalculator = new Calculator();
         Assert.assertEquals(closerPoint, abstractCalculator.findingCloserToOriginPoint(checkingPoints));
     }
 
