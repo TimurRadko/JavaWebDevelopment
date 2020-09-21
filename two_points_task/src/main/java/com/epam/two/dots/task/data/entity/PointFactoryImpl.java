@@ -19,7 +19,7 @@ public class PointFactoryImpl implements PointFactory {
                 addOneCoordinate(stringNumber);
                 countArraySize++;
             } catch (IOException e) {
-                e.printStackTrace();
+                System.err.println(e.getMessage());
             }
         }
         return new Point(creatingPoints[0], creatingPoints[1]);
