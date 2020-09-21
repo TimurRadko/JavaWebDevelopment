@@ -23,9 +23,8 @@ public class TwoPointsCalculation {
         PointFactory pointFactory = dataReceiver.getPointFactory();
 
         Point firstPoint = pointFactory.createPoint();
-        Point secondPoint = pointFactory.createPoint();
-
         dataReceiver.receivingPoint(firstPoint);
+        Point secondPoint = pointFactory.createPoint();
         dataReceiver.receivingPoint(secondPoint);
 
         Point closerPoint = calculator.findingCloserToOriginPoint(dataReceiver.getPoints());
