@@ -11,7 +11,7 @@ import com.epam.reverse.args.view.type.Printer;
 
 import java.util.List;
 
-public class ReverseArgsTest {
+public class ReverseArgs {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         DataReceiverFactory dataReceiverFactory = new DataReceivingFactoryImpl();
