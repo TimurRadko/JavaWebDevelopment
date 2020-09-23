@@ -32,7 +32,7 @@ public class TwoPointsCalculationTest {
     public void shouldCreateCorrectPointUsingCreatePointMethod() {
         String data = 4 + "\n" + 4 + "\n";
         getTestingString(data);
-        PointFactory pointFactory= new PointFactoryImpl();
+        PointFactory pointFactory = new PointFactoryImpl();
         Point createdPoint = pointFactory.createPoint();
         Assert.assertEquals(expectedPoint, createdPoint);
     }

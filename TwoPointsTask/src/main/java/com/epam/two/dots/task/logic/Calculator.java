@@ -11,7 +11,9 @@ public class Calculator {
     }
 
     private void determiningDistanceFromOrigin(Point point) {
-        double distanceFromOrigin = Math.sqrt(Math.round(point.getCoordinateX()) + Math.round(point.getCoordinateY()));
+        int coordinateX = point.getCoordinateX();
+        int coordinateY = point.getCoordinateY();
+        double distanceFromOrigin = Math.sqrt(Math.round(coordinateX) + Math.round(coordinateY));
         point.setDistanceFromOrigin(distanceFromOrigin);
     }
 
