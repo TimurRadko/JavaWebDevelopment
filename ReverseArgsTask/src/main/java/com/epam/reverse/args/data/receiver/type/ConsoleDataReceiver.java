@@ -7,6 +7,7 @@ import java.util.List;
 public class ConsoleDataReceiver implements ConsoleReceiver {
     private final List<String> receivingList = new ArrayList<>();
 
+    @Override
     public void receivingConsoleData(String[] args) {
         Collections.addAll(receivingList, args);
     }
