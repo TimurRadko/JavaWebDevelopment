@@ -1,7 +1,7 @@
 package com.epam.reverse.args.data;
 
-import com.epam.reverse.args.data.receiver.type.ConsoleReceiver;
+import com.epam.reverse.args.data.receiver.type.DataReceiver;
 
 public interface DataReceiverFactory {
-    ConsoleReceiver getDataReceiver();
+    DataReceiver getDataReceiver();
 }

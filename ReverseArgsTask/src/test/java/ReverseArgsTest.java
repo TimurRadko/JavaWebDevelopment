@@ -1,5 +1,5 @@
 import com.epam.reverse.args.data.receiver.type.ConsoleDataReceiver;
-import com.epam.reverse.args.data.receiver.type.ConsoleReceiver;
+import com.epam.reverse.args.data.receiver.type.DataReceiver;
 import com.epam.reverse.args.logic.Calculator;
 import com.epam.reverse.args.view.type.ConsolePrinter;
 import com.epam.reverse.args.view.type.Printer;
@@ -23,9 +23,9 @@ public class ReverseArgsTest {
 
     @Test
     public void shouldCorrectAddingDataUsingReceivingConsoleDataMethod() {
-        ConsoleReceiver consoleReceiver = new ConsoleDataReceiver();
-        consoleReceiver.receivingConsoleData(actualData);
-        List<String> actualDataList = consoleReceiver.getReceivingList();
+        DataReceiver dataReceiver = new ConsoleDataReceiver();
+        dataReceiver.receivingData(actualData);
+        List<String> actualDataList = dataReceiver.getReceivingData();
         Assert.assertArrayEquals(expectedData, actualDataList.toArray());
     }
 

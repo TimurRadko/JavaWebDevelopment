@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ConsoleDataReceiver implements ConsoleReceiver {
+public class ConsoleDataReceiver implements DataReceiver {
     private final List<String> receivingList = new ArrayList<>();
 
     @Override
-    public void receivingConsoleData(String[] args) {
+    public void receivingData(String[] args) {
         Collections.addAll(receivingList, args);
     }
 
     @Override
-    public List<String> getReceivingList() {
+    public List<String> getReceivingData() {
         return receivingList;
     }
 }
