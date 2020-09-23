@@ -17,11 +17,13 @@ import java.util.List;
 
 public class ReverseArgsTest {
     private final String[] expectedData = {"1", "2", "3", "4"};
+    private final List<String> expectedDataList = Arrays.asList(expectedData);
     private final String[] reverseExpectedData = {"4", "3", "2", "1"};
     private final List<String> expectedEmptyData = new ArrayList<>(0);
     private DataReceiverFactory dataReceiverFactory;
     private PrinterFactory printerFactory;
     private final static String EMPTY_CONSOLE_MESSAGE = "Console args is empty";
+    private final static String EXPECTED_STRING_DATA = "1 2 3 4";
 
     @Before
     public void createFactories() {
@@ -40,8 +42,7 @@ public class ReverseArgsTest {
     @Test
     public void shouldReturnReverseDataFromReverseArgsMethod() {
         Calculator calculator = new Calculator();
-        List<String> arrayAsList = Arrays.asList(expectedData);
-        List<String> reverseList = calculator.reverseArgs(arrayAsList);
+        List<String> reverseList = calculator.reverseArgs(expectedDataList);
         String[] actualReverseArray = reverseList.toArray(new String[0]);
         Assert.assertArrayEquals(reverseExpectedData, actualReverseArray);
     }
@@ -54,8 +55,7 @@ public class ReverseArgsTest {
     @Test
     public void shouldPrintCorrectAnswerWithFilledConsoleLine() {
         List<String> actualDataList = Arrays.asList(expectedData);
-        String expectedStringData = Arrays.toString(expectedData);
-        Assert.assertEquals(expectedStringData, getTestingConsoleOutput(actualDataList));
+        Assert.assertEquals(EXPECTED_STRING_DATA, getTestingConsoleOutput(actualDataList));
     }
 
     private String getTestingConsoleOutput(List<String> expectedData) {
@@ -66,8 +66,6 @@ public class ReverseArgsTest {
         System.setOut(stream);
         printer.printAnswer(expectedData);
         System.setOut(consoleStream);
-        String resultString = outputStream.toString();
-        int endTrim = (outputStream.toString().length() - 2);
-        return resultString.substring(0, endTrim);
+        return outputStream.toString().trim();
     }
 }

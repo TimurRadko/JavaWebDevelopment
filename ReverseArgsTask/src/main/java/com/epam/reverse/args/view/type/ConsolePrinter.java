@@ -7,9 +7,15 @@ public class ConsolePrinter implements Printer {
     @Override
     public void printAnswer(List<String> receivingList) {
         if (receivingList.size() > 0) {
-            System.out.println(receivingList);
+            printList(receivingList);
         } else {
             System.out.println("Console args is empty");
+        }
+    }
+
+    private void printList(List<String> receivingList) {
+        for (String value : receivingList) {
+            System.out.print(value + " ");
         }
     }
 }
