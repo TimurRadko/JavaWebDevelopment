@@ -36,7 +36,8 @@ public class ReverseArgsTest {
         ConsoleReceiver consoleReceiver = dataReceiverFactory.getDataReceiver();
         String[] actualData = {"1", "2", "3", "4"};
         consoleReceiver.receivingConsoleData(actualData);
-        Assert.assertArrayEquals(expectedData, consoleReceiver.getReceivingList().toArray());
+        List<String> actualDataList = consoleReceiver.getReceivingList();
+        Assert.assertArrayEquals(expectedData, actualDataList.toArray());
     }
 
     @Test
