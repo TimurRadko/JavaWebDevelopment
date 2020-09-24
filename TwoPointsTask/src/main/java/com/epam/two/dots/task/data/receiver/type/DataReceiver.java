@@ -4,7 +4,7 @@ import com.epam.two.dots.task.data.entity.Point;
 import com.epam.two.dots.task.data.entity.PointFactory;
 
 public interface DataReceiver {
-    void receivingPoint(Point point);
+    void receivePoint(Point point);
     Point[] getPoints();
     PointFactory getPointFactory();
 }

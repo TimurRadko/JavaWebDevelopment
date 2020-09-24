@@ -4,23 +4,20 @@ import com.epam.two.dots.task.data.entity.Point;
 import com.epam.two.dots.task.data.entity.PointFactory;
 import com.epam.two.dots.task.data.entity.PointFactoryImpl;
 
-public class EntityDataReceiver implements DataReceiver {
-    private final Point[] points = new Point[2];
+public class DataReceiverEntity implements DataReceiver {
+    private static final int MAX_COUNT_POINT = 2;
+    private final Point[] points = new Point[MAX_COUNT_POINT];
     private int countArraySize = 0;
     private final PointFactoryImpl factory;
 
-    public EntityDataReceiver() {
+    public DataReceiverEntity() {
         factory = new PointFactoryImpl();
     }
 
-    private void addPointsToArray(Point point) {
+    @Override
+    public void receivePoint(Point point) {
         points[countArraySize] = point;
         countArraySize++;
-    }
-
-    @Override
-    public void receivingPoint(Point point) {
-        addPointsToArray(point);
     }
 
     @Override

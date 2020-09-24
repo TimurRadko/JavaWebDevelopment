@@ -2,7 +2,7 @@ package com.epam.reverse.args.view.entity;
 
 import java.util.List;
 
-public class ConsolePrinter implements Printer {
+public class PrinterConsole implements Printer {
 
     @Override
     public void printAnswer(List<String> receivingList) {

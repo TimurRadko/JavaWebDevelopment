@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ConsoleDataReceiver implements DataReceiver {
+public class DataReceiverConsole implements DataReceiver {
     private final List<String> receivingList = new ArrayList<>();
 
     @Override

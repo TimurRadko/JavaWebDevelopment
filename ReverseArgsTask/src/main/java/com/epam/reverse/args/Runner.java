@@ -17,7 +17,7 @@ public class Runner {
         DataReceiverFactory dataReceiverFactory = new DataReceivingFactoryImpl();
         DataReceiver dataReceiver = dataReceiverFactory.create();
         dataReceiver.receiveData(args);
-        
+
         List<String> receivingList = dataReceiver.getReceiveData();
         List<String> reversingList = calculator.reverseData(receivingList);
 

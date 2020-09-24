@@ -8,26 +8,27 @@ import com.epam.two.dots.task.data.entity.PointFactory;
 import com.epam.two.dots.task.logic.Calculator;
 import com.epam.two.dots.task.view.PrinterFactory;
 import com.epam.two.dots.task.view.PrinterFactoryImpl;
-import com.epam.two.dots.task.view.type.ConsolePrinter;
+import com.epam.two.dots.task.view.type.Printer;
 
-public class TwoPointsCalculation {
+public class Runner {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
         DataReceiverFactory dataReceiverFactory = new DataReceiverFactoryImpl();
-        DataReceiver dataReceiver = dataReceiverFactory.createDataReceiver();
+        DataReceiver dataReceiver = dataReceiverFactory.create();
 
         PrinterFactory printerFactory = new PrinterFactoryImpl();
-        ConsolePrinter consolePrinter = printerFactory.createConsolePrinter();
+        Printer printer = printerFactory.create();
 
         PointFactory pointFactory = dataReceiver.getPointFactory();
 
-        Point firstPoint = pointFactory.createPoint();
-        dataReceiver.receivingPoint(firstPoint);
-        Point secondPoint = pointFactory.createPoint();
-        dataReceiver.receivingPoint(secondPoint);
+        Point firstPoint = pointFactory.create();
+        dataReceiver.receivePoint(firstPoint);
 
-        Point closerPoint = calculator.findingCloserToOriginPoint(dataReceiver.getPoints());
-        consolePrinter.printAnswer(closerPoint);
+        Point secondPoint = pointFactory.create();
+        dataReceiver.receivePoint(secondPoint);
+
+        Point closerPoint = calculator.findCloserToOrigin(dataReceiver.getPoints());
+        printer.printAnswer(closerPoint);
     }
 }
