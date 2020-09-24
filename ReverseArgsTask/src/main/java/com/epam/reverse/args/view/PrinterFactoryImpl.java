@@ -1,12 +1,12 @@
 package com.epam.reverse.args.view;
 
-import com.epam.reverse.args.view.type.ConsolePrinter;
-import com.epam.reverse.args.view.type.Printer;
+import com.epam.reverse.args.view.entity.ConsolePrinter;
+import com.epam.reverse.args.view.entity.Printer;
 
 public class PrinterFactoryImpl implements PrinterFactory{
 
     @Override
-    public Printer getPrinter() {
+    public Printer create() {
         return new ConsolePrinter();
     }
 }

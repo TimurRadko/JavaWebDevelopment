@@ -1,4 +1,4 @@
-package com.epam.reverse.args.view.type;
+package com.epam.reverse.args.view.entity;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class ConsolePrinter implements Printer {
 
     private void printList(List<String> receivingList) {
         for (String value : receivingList) {
-            System.out.print(value + " ");
+            System.out.printf("%s ", value);
         }
     }
 }

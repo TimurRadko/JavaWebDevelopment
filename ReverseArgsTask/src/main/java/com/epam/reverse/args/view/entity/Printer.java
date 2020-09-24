@@ -1,4 +1,4 @@
-package com.epam.reverse.args.view.type;
+package com.epam.reverse.args.view.entity;
 
 import java.util.List;
 

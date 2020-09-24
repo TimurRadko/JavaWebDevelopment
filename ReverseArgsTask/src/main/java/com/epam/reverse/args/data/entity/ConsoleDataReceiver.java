@@ -1,4 +1,4 @@
-package com.epam.reverse.args.data.receiver.type;
+package com.epam.reverse.args.data.entity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,12 +8,12 @@ public class ConsoleDataReceiver implements DataReceiver {
     private final List<String> receivingList = new ArrayList<>();
 
     @Override
-    public void receivingData(String[] args) {
+    public void receiveData(String[] args) {
         Collections.addAll(receivingList, args);
     }
 
     @Override
-    public List<String> getReceivingData() {
+    public List<String> getReceiveData() {
         return receivingList;
     }
 }

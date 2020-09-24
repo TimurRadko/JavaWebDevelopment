@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Calculator {
-    public List<String> reverseArgs(List<String> receivingData) {
+    public List<String> reverseData(List<String> receivingData) {
         Collections.reverse(receivingData);
         return receivingData;
     }
