@@ -12,13 +12,8 @@ import com.epam.two.dots.task.view.type.Printer;
 
 public class Runner {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
-
         DataReceiverFactory dataReceiverFactory = new DataReceiverFactoryImpl();
         DataReceiver dataReceiver = dataReceiverFactory.create();
-
-        PrinterFactory printerFactory = new PrinterFactoryImpl();
-        Printer printer = printerFactory.create();
 
         PointFactory pointFactory = dataReceiver.getPointFactory();
 
@@ -28,7 +23,11 @@ public class Runner {
         Point secondPoint = pointFactory.create();
         dataReceiver.receivePoint(secondPoint);
 
+        Calculator calculator = new Calculator();
         Point closerPoint = calculator.findCloserToOrigin(dataReceiver.getPoints());
+
+        PrinterFactory printerFactory = new PrinterFactoryImpl();
+        Printer printer = printerFactory.create();
         printer.printAnswer(closerPoint);
     }
 }

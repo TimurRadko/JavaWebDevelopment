@@ -5,24 +5,15 @@ import com.epam.two.dots.task.data.entity.Point;
 public class Calculator {
 
     public Point findCloserToOrigin(Point[] points) {
-        Point[] pointsWithAddingDistance = addDistanceBetweenPointAndOrigin(points);
-        return (pointsWithAddingDistance[0].getDistanceFromOrigin()
-                < pointsWithAddingDistance[1].getDistanceFromOrigin()) ? points[0] : points[1];
+        Point firstPoint = points[0];
+        Point secondPoint = points[1];
+        return (determineDistanceFromOrigin(firstPoint)
+                < determineDistanceFromOrigin(secondPoint)) ? firstPoint : secondPoint;
     }
 
-    private void determineDistanceFromOrigin(Point point) {
+    private double determineDistanceFromOrigin(Point point) {
         int coordinateX = point.getCoordinateX();
         int coordinateY = point.getCoordinateY();
-        double distanceFromOrigin = Math.sqrt(Math.round(coordinateX) + Math.round(coordinateY));
-        point.setDistanceFromOrigin(distanceFromOrigin);
-    }
-
-    private Point[] addDistanceBetweenPointAndOrigin(Point[] points) {
-        Point[] pointsWithAddingDistance = new Point[points.length];
-        for (int i = 0; i < points.length; i++) {
-            determineDistanceFromOrigin(points[i]);
-            pointsWithAddingDistance[i] = points[i];
-        }
-        return pointsWithAddingDistance;
+        return Math.sqrt(Math.round(coordinateX) + Math.round(coordinateY));
     }
 }
