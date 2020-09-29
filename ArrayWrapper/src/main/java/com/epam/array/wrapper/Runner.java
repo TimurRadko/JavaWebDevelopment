@@ -1,3 +1,5 @@
+package com.epam.array.wrapper;
+
 import com.epam.array.wrapper.data.ArrayWrapperFactory;
 import com.epam.array.wrapper.data.ArrayWrapperFactoryImpl;
 import com.epam.array.wrapper.data.entity.ArrayWrapper;
