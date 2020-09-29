@@ -29,8 +29,6 @@ public class Runner {
         ArrayWrapper fibonacciNumberInArray = calculator.findFibonacciNumberInArray(consoleArrayWrapper);
         printerConsole.print(fibonacciNumberInArray);
 
-        System.out.println();
-
         //Filling in using the random
         ArrayWrapper randomArrayWrapper = arrayWrapperFactory.create(5);
         randomArrayWrapper.fillWrapperArray(ArrayFillerType.RANDOM);
@@ -54,6 +52,5 @@ public class Runner {
 
         fibonacciNumberInArray = calculator.findFibonacciNumberInArray(fileArrayWrapper);
         printerConsole.print(fibonacciNumberInArray);
-
     }
 }

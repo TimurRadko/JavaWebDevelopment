@@ -9,7 +9,7 @@ import java.util.Objects;
 public class ArrayWrapperImpl implements ArrayWrapper {
     private final int[] array;
     private final int sizeArrayWrapper;
-    private static final String FILE_PATH = "src/main/resources/input.txt";
+    private static final String FILE_PATH = "src/main/java/com/epam/array/wrapper/input.txt";
 
     public ArrayWrapperImpl(int length) {
         this.array = new int[length];

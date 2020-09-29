@@ -9,8 +9,8 @@ public class ArrayWrapperFactoryImplTest {
     @Test
     public void testCreateShouldCreateArrayWrapperUsingLengthCreate() {
         ArrayWrapperFactory arrayWrapperFactory = new ArrayWrapperFactoryImpl();
-        int actualSize = 4;
-        ArrayWrapper arrayWrapper = arrayWrapperFactory.create(actualSize);
+        int valueActualArrayLength = 4;
+        ArrayWrapper arrayWrapper = arrayWrapperFactory.create(valueActualArrayLength);
         Assert.assertNotNull(arrayWrapper);
     }
 

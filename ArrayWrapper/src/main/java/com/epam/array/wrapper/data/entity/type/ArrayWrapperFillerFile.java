@@ -1,18 +1,16 @@
 package com.epam.array.wrapper.data.entity.type;
 
 import com.epam.array.wrapper.data.entity.ArrayWrapper;
+import com.epam.array.wrapper.exception.DataException;
 
 import java.io.*;
 
 public class ArrayWrapperFillerFile implements ArrayWrapperFiller {
     private final String filename;
+    private static final String DELIMITER_REGEX = "\\s+";
 
     public ArrayWrapperFillerFile(String filename) {
         this.filename = filename;
-    }
-
-    public String getFilename() {
-        return filename;
     }
 
     @Override
@@ -22,7 +20,7 @@ public class ArrayWrapperFillerFile implements ArrayWrapperFiller {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = reader.readLine()) != null && indexArray < arrayLength) {
-                String[] arrayString = line.split("\\s+");
+                String[] arrayString = line.split(DELIMITER_REGEX);
                 for (int i = 0; i < arrayString.length; i++) {
                     String stringValue = arrayString[i];
                     int value = Integer.parseInt(stringValue);
@@ -31,7 +29,7 @@ public class ArrayWrapperFillerFile implements ArrayWrapperFiller {
                 indexArray++;
             }
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            throw new DataException(e.getMessage(), e);
         }
     }
 }

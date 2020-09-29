@@ -15,8 +15,8 @@ public class ArrayWrapperImplTest {
 
     @Test
     public void testCreateShouldCreateArrayWrapperUsingLengthCreateSpecifyLength() {
-        int actualSize = 4;
-        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(actualSize);
+        int valueActualArrayLength = 4;
+        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(valueActualArrayLength);
         int actualArrayWrapperSize = arrayWrapper.getSizeArrayWrapper();
         Assert.assertEquals(expectedSize, actualArrayWrapperSize);
     }
