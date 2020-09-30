@@ -1,7 +1,6 @@
 package com.epam.array.wrapper.data.entity.type;
 
 import com.epam.array.wrapper.data.entity.ArrayWrapper;
-import com.epam.array.wrapper.exception.DataException;
 
 import java.io.*;
 
@@ -29,7 +28,7 @@ public class ArrayWrapperFillerFile implements ArrayWrapperFiller {
                 indexArray++;
             }
         } catch (IOException e) {
-            throw new DataException(e.getMessage(), e);
+            System.err.println(e.getMessage());
         }
     }
 }

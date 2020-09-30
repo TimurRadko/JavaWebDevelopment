@@ -1,7 +1,6 @@
 package com.epam.array.wrapper.data.entity;
 
 import com.epam.array.wrapper.data.entity.type.*;
-import com.epam.array.wrapper.exception.NotFoundArrayWrapperFillingTypeException;
 
 import java.util.Arrays;
 
@@ -49,7 +48,7 @@ public class ArrayWrapperImpl implements ArrayWrapper {
                 arrayWrapperFiller.fill(this);
                 break;
             default:
-                throw new NotFoundArrayWrapperFillingTypeException("Not found array wrapper type");
+                throw new IllegalArgumentException("Not found array wrapper type");
         }
     }
 

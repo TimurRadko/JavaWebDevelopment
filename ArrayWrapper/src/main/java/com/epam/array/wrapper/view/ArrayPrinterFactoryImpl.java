@@ -1,6 +1,5 @@
 package com.epam.array.wrapper.view;
 
-import com.epam.array.wrapper.exception.NotFoundArrayPrinterTypeException;
 import com.epam.array.wrapper.view.type.ArrayPrinter;
 import com.epam.array.wrapper.view.type.ArrayPrinterConsole;
 import com.epam.array.wrapper.view.type.ArrayPrinterFile;
@@ -16,7 +15,7 @@ public class ArrayPrinterFactoryImpl implements ArrayPrinterFactory {
             case FILE:
                 return new ArrayPrinterFile(FILE_PATH);
             default:
-                throw new NotFoundArrayPrinterTypeException("Printer type not found");
+                throw new IllegalArgumentException("Printer type not found");
         }
     }
 }
