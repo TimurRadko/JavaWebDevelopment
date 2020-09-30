@@ -4,26 +4,22 @@ import com.epam.array.wrapper.data.entity.type.*;
 import com.epam.array.wrapper.exception.NotFoundArrayWrapperFillingTypeException;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class ArrayWrapperImpl implements ArrayWrapper {
     private final int[] array;
-    private final int sizeArrayWrapper;
     private static final String FILE_PATH = "src/main/java/com/epam/array/wrapper/input.txt";
 
     public ArrayWrapperImpl(int length) {
         this.array = new int[length];
-        this.sizeArrayWrapper = length;
     }
 
     public ArrayWrapperImpl(int[] array) {
         this.array = array;
-        this.sizeArrayWrapper = array.length;
     }
 
     @Override
     public int getSizeArrayWrapper() {
-        return sizeArrayWrapper;
+        return array.length;
     }
 
     @Override
@@ -62,15 +58,12 @@ public class ArrayWrapperImpl implements ArrayWrapper {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ArrayWrapperImpl that = (ArrayWrapperImpl) o;
-        return sizeArrayWrapper == that.sizeArrayWrapper &&
-                Arrays.equals(array, that.array);
+        return Arrays.equals(array, that.array);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(sizeArrayWrapper);
-        result = 31 * result + Arrays.hashCode(array);
-        return result;
+        return Arrays.hashCode(array);
     }
 
     @Override
