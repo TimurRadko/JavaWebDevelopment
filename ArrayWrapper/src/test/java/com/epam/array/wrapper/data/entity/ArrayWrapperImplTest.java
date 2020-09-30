@@ -4,21 +4,20 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ArrayWrapperImplTest {
-    private final int expectedSize = 4;
+    private static final int EXPECTED_SIZE = 4;
+    private static final int VALUE_ACTUAL_ARRAY_LENGTH = 4;
 
     @Test
     public void testCreateShouldCreateArrayWrapperUsingLengthCreate() {
-        int actualSize = 4;
-        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(actualSize);
+        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(VALUE_ACTUAL_ARRAY_LENGTH);
         Assert.assertNotNull(arrayWrapper);
     }
 
     @Test
     public void testCreateShouldCreateArrayWrapperUsingLengthCreateSpecifyLength() {
-        int valueActualArrayLength = 4;
-        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(valueActualArrayLength);
+        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(VALUE_ACTUAL_ARRAY_LENGTH);
         int actualArrayWrapperSize = arrayWrapper.getSizeArrayWrapper();
-        Assert.assertEquals(expectedSize, actualArrayWrapperSize);
+        Assert.assertEquals(EXPECTED_SIZE, actualArrayWrapperSize);
     }
 
     @Test
@@ -33,6 +32,6 @@ public class ArrayWrapperImplTest {
         int[] actualArray = {1, 2, 3, 4};
         ArrayWrapper arrayWrapper = new ArrayWrapperImpl(actualArray);
         int actualArrayWrapperSize = arrayWrapper.getSizeArrayWrapper();
-        Assert.assertEquals(expectedSize, actualArrayWrapperSize);
+        Assert.assertEquals(EXPECTED_SIZE, actualArrayWrapperSize);
     }
 }

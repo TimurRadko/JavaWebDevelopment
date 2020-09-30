@@ -5,12 +5,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ArrayWrapperFactoryImplTest {
+    private static final int VALUE_ACTUAL_ARRAY_LENGTH = 4;
 
     @Test
     public void testCreateShouldCreateArrayWrapperUsingLengthCreate() {
         ArrayWrapperFactory arrayWrapperFactory = new ArrayWrapperFactoryImpl();
-        int valueActualArrayLength = 4;
-        ArrayWrapper arrayWrapper = arrayWrapperFactory.create(valueActualArrayLength);
+        ArrayWrapper arrayWrapper = arrayWrapperFactory.create(VALUE_ACTUAL_ARRAY_LENGTH);
         Assert.assertNotNull(arrayWrapper);
     }
 
