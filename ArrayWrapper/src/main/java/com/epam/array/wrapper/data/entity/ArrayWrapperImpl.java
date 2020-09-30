@@ -37,7 +37,7 @@ public class ArrayWrapperImpl implements ArrayWrapper {
     }
 
     @Override
-    public void fillWrapperArray(ArrayFillerType fillingType) {
+    public void fillArrayWrapper(ArrayFillerType fillingType) {
         ArrayWrapperFiller arrayWrapperFiller;
         switch (fillingType) {
             case CONSOLE:

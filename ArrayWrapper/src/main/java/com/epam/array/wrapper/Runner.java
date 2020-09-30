@@ -15,7 +15,7 @@ public class Runner {
         //Filling in using the console.
         ArrayWrapperFactory arrayWrapperFactory = new ArrayWrapperFactoryImpl();
         ArrayWrapper consoleArrayWrapper = arrayWrapperFactory.create(4);
-        consoleArrayWrapper.fillWrapperArray(ArrayFillerType.CONSOLE);
+        consoleArrayWrapper.fillArrayWrapper(ArrayFillerType.CONSOLE);
 
         //Printing in using the console
         ArrayPrinterFactory printerFactory = new ArrayPrinterFactoryImpl();
@@ -31,7 +31,7 @@ public class Runner {
 
         //Filling in using the random
         ArrayWrapper randomArrayWrapper = arrayWrapperFactory.create(5);
-        randomArrayWrapper.fillWrapperArray(ArrayFillerType.RANDOM);
+        randomArrayWrapper.fillArrayWrapper(ArrayFillerType.RANDOM);
         printerConsole.print(randomArrayWrapper);
 
         calculator.quickSort(randomArrayWrapper);
@@ -42,7 +42,7 @@ public class Runner {
 
         //Filling in using the file
         ArrayWrapper fileArrayWrapper = arrayWrapperFactory.create(4);
-        fileArrayWrapper.fillWrapperArray(ArrayFillerType.FILE);
+        fileArrayWrapper.fillArrayWrapper(ArrayFillerType.FILE);
 
         ArrayPrinter printerFile = printerFactory.create(ArrayPrinterType.FILE);
         printerFile.print(fileArrayWrapper);
