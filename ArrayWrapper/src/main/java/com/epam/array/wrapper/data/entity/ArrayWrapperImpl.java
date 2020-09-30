@@ -5,30 +5,30 @@ import com.epam.array.wrapper.data.entity.type.*;
 import java.util.Arrays;
 
 public class ArrayWrapperImpl implements ArrayWrapper {
-    private final int[] array;
+    private final int[] ARRAY;
     private static final String FILE_PATH = "src/main/java/com/epam/array/wrapper/input.txt";
 
     public ArrayWrapperImpl(int length) {
-        this.array = new int[length];
+        this.ARRAY = new int[length];
     }
 
     public ArrayWrapperImpl(int[] array) {
-        this.array = array;
+        this.ARRAY = array;
     }
 
     @Override
     public int getSizeArrayWrapper() {
-        return array.length;
+        return ARRAY.length;
     }
 
     @Override
     public int getValue(int index) {
-        return array[index];
+        return ARRAY[index];
     }
 
     @Override
     public void setValue(int index, int value) {
-        array[index] = value;
+        ARRAY[index] = value;
     }
 
     @Override
@@ -57,16 +57,16 @@ public class ArrayWrapperImpl implements ArrayWrapper {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ArrayWrapperImpl that = (ArrayWrapperImpl) o;
-        return Arrays.equals(array, that.array);
+        return Arrays.equals(ARRAY, that.ARRAY);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(array);
+        return Arrays.hashCode(ARRAY);
     }
 
     @Override
     public String toString() {
-        return Arrays.toString(array);
+        return Arrays.toString(ARRAY);
     }
 }

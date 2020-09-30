@@ -5,18 +5,18 @@ import com.epam.array.wrapper.data.entity.ArrayWrapper;
 import java.io.*;
 
 public class ArrayWrapperFillerFile implements ArrayWrapperFiller {
-    private final String filename;
+    private final String FILENAME;
     private static final String DELIMITER_REGEX = "\\s+";
 
     public ArrayWrapperFillerFile(String filename) {
-        this.filename = filename;
+        this.FILENAME = filename;
     }
 
     @Override
     public void fill(ArrayWrapper arrayWrapper) {
         int arrayLength = arrayWrapper.getSizeArrayWrapper();
         int indexArray = 0;
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILENAME))) {
             String line;
             while ((line = reader.readLine()) != null && indexArray < arrayLength) {
                 String[] arrayString = line.split(DELIMITER_REGEX);
