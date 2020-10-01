@@ -1,5 +1,6 @@
 package com.epam.array.wrapper.view.type;
 
+import com.epam.array.wrapper.exception.DataException;
 import com.epam.array.wrapper.model.entity.Wrapper;
 import com.epam.array.wrapper.model.entity.ArrayWrapper;
 import org.junit.Assert;
@@ -12,14 +13,14 @@ public class ArrayPrinterConsoleTest {
     private static final String EXPECTED_PRINT = "[1, 2, 3, 4]";
 
     @Test
-    public void testPrintShouldPrintCorrectAnswer() {
+    public void testPrintShouldPrintCorrectAnswer() throws DataException {
         int[] actualData = {1, 2, 3, 4};
         Wrapper arrayWrapper = new ArrayWrapper(actualData);
         String actualDataString = getTestingConsoleOutput(arrayWrapper);
         Assert.assertEquals(EXPECTED_PRINT, actualDataString);
     }
 
-    private String getTestingConsoleOutput(Wrapper arrayWrapper) {
+    private String getTestingConsoleOutput(Wrapper arrayWrapper) throws DataException {
         ArrayPrinter printer = new ArrayPrinterConsole();
         PrintStream consoleStream = System.out;
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
