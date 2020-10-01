@@ -16,8 +16,9 @@ public class ArrayWrapperCreatorImplTest {
     @Test
     public void testCreateShouldCorrectEntity() throws DataException {
         ArrayWrapperCreator arrayWrapperCreator = new ArrayWrapperCreatorImpl();
-        DataReadable readable = new FileDataReader(FILE_PATH);
-        Wrapper actualWrapper = arrayWrapperCreator.create(readable);
+        DataReadable reader = new FileDataReader(FILE_PATH);
+        int[] actualArray = reader.read();
+        Wrapper actualWrapper = arrayWrapperCreator.create(actualArray);
         Assert.assertEquals(EXPECTED_WRAPPER, actualWrapper);
     }
 }

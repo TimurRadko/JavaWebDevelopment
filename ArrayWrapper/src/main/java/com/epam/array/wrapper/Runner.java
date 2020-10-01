@@ -19,8 +19,10 @@ public class Runner {
     public static void main(String[] args) throws DataException {
         DataReaderFactory dataReaderFactory = new DataReaderFactoryImpl();
         DataReadable reader = dataReaderFactory.create(DataReadingLocation.RANDOM);
+        int[] array = reader.read();
+
         ArrayWrapperCreator wrapperCreator = new ArrayWrapperCreatorImpl();
-        Wrapper arrayWrapper = wrapperCreator.create(reader);
+        Wrapper arrayWrapper = wrapperCreator.create(array);
 
         ArrayPrinterFactory printerFactory = new ArrayPrinterFactoryImpl();
         ArrayPrinter printer = printerFactory.create(ArrayPrinterType.CONSOLE);
