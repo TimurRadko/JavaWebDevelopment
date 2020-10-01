@@ -1,6 +1,6 @@
 package com.epam.array.wrapper.view.type;
 
-import com.epam.array.wrapper.data.entity.ArrayWrapper;
+import com.epam.array.wrapper.model.entity.Wrapper;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,12 +13,8 @@ public class ArrayPrinterFile implements ArrayPrinter {
         this.filename = filename;
     }
 
-    public String getFilename() {
-        return filename;
-    }
-
     @Override
-    public void print(ArrayWrapper arrayWrapper) {
+    public void print(Wrapper arrayWrapper) {
         int[] arrayForPrinting = getArrayForPrinting(arrayWrapper);
         try (FileWriter writer = new FileWriter(filename)) {
                 writer.write(Arrays.toString(arrayForPrinting));
@@ -27,7 +23,7 @@ public class ArrayPrinterFile implements ArrayPrinter {
         }
     }
 
-    private int[] getArrayForPrinting(ArrayWrapper arrayWrapper) {
+    private int[] getArrayForPrinting(Wrapper arrayWrapper) {
         int arrayLength = arrayWrapper.getSizeArrayWrapper();
         int[] printingArray = new int[arrayLength];
         for (int i = 0; i < arrayLength; i++) {

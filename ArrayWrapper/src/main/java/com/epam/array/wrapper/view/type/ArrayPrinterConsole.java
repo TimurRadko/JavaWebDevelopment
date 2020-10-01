@@ -1,10 +1,10 @@
 package com.epam.array.wrapper.view.type;
 
-import com.epam.array.wrapper.data.entity.ArrayWrapper;
+import com.epam.array.wrapper.model.entity.Wrapper;
 
 public class ArrayPrinterConsole implements ArrayPrinter {
 
-    public void print(ArrayWrapper arrayWrapper) {
-        System.out.println(arrayWrapper);
+    public void print(Wrapper wrapper) {
+        System.out.println(wrapper);
     }
 }

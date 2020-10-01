@@ -1,7 +1,7 @@
 package com.epam.array.wrapper.view.type;
 
-import com.epam.array.wrapper.data.entity.ArrayWrapper;
-import com.epam.array.wrapper.data.entity.ArrayWrapperImpl;
+import com.epam.array.wrapper.model.entity.Wrapper;
+import com.epam.array.wrapper.model.entity.ArrayWrapper;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,12 +14,12 @@ public class ArrayPrinterConsoleTest {
     @Test
     public void testPrintShouldPrintCorrectAnswer() {
         int[] actualData = {1, 2, 3, 4};
-        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(actualData);
+        Wrapper arrayWrapper = new ArrayWrapper(actualData);
         String actualDataString = getTestingConsoleOutput(arrayWrapper);
         Assert.assertEquals(EXPECTED_PRINT, actualDataString);
     }
 
-    private String getTestingConsoleOutput(ArrayWrapper arrayWrapper) {
+    private String getTestingConsoleOutput(Wrapper arrayWrapper) {
         ArrayPrinter printer = new ArrayPrinterConsole();
         PrintStream consoleStream = System.out;
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

@@ -1,29 +1,29 @@
 package com.epam.array.wrapper.logic;
 
-import com.epam.array.wrapper.data.entity.ArrayWrapper;
-import com.epam.array.wrapper.data.entity.ArrayWrapperImpl;
+import com.epam.array.wrapper.model.entity.Wrapper;
+import com.epam.array.wrapper.model.entity.ArrayWrapper;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ArrayCalculatorTest {
-    private static final ArrayWrapper EXPECTED_ENTITY = new ArrayWrapperImpl(new int[]{1, 2, 3, 4});
-    private static final ArrayWrapper EXPECTED_ENTITY_FIBONACCI = new ArrayWrapperImpl(new int[]{0, 1, 1});
+    private static final Wrapper EXPECTED_ENTITY = new ArrayWrapper(new int[]{1, 2, 3, 4});
+    private static final Wrapper EXPECTED_ENTITY_FIBONACCI = new ArrayWrapper(new int[]{0, 1, 1});
 
     @Test
     public void testQuickSortShouldCorrectlySortedArray() {
         int[] actualArray = {3, 2, 1, 4};
-        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(actualArray);
+        Wrapper arrayWrapper = new ArrayWrapper(actualArray);
         ArrayCalculator calculator = new ArrayCalculator();
-        calculator.quickSort(arrayWrapper);
-        Assert.assertEquals(EXPECTED_ENTITY, arrayWrapper);
+        Wrapper sortedWrapper = calculator.quickSort(arrayWrapper);
+        Assert.assertEquals(EXPECTED_ENTITY, sortedWrapper);
     }
 
     @Test
     public void testFindFibonacciNumberInArrayShouldFindCorrectNumbers() {
         int[] actualArray = {0, 1, 1, 4};
-        ArrayWrapper arrayWrapper = new ArrayWrapperImpl(actualArray);
+        Wrapper arrayWrapper = new ArrayWrapper(actualArray);
         ArrayCalculator calculator = new ArrayCalculator();
-        ArrayWrapper fibonacciArrayWrapper = calculator.findFibonacciNumberInArray(arrayWrapper);
+        Wrapper fibonacciArrayWrapper = calculator.findFibonacciNumberInArray(arrayWrapper);
         Assert.assertEquals(EXPECTED_ENTITY_FIBONACCI, fibonacciArrayWrapper);
     }
 }

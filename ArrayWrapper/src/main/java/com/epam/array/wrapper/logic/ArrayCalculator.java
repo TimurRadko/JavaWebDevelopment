@@ -1,15 +1,15 @@
 package com.epam.array.wrapper.logic;
 
-import com.epam.array.wrapper.data.entity.ArrayWrapper;
-import com.epam.array.wrapper.data.entity.ArrayWrapperImpl;
+import com.epam.array.wrapper.model.entity.Wrapper;
+import com.epam.array.wrapper.model.entity.ArrayWrapper;
 
 
 public class ArrayCalculator {
 
-    public void quickSort(ArrayWrapper arrayWrapper) {
+    public Wrapper quickSort(Wrapper arrayWrapper) {
         int[] source = unpackArray(arrayWrapper);
         quickSortArrayLayer(source, 0, source.length - 1);
-        setValuesInWrapperArray(arrayWrapper, source);
+        return new ArrayWrapper(source);
     }
 
     private void quickSortArrayLayer(int[] source, int leftBorder, int rightBorder) {
@@ -43,24 +43,17 @@ public class ArrayCalculator {
         }
     }
 
-    private int[] unpackArray(ArrayWrapper arrayWrapper) {
-        int arrayLength = arrayWrapper.getSizeArrayWrapper();
+    private int[] unpackArray(Wrapper wrapper) {
+        int arrayLength = wrapper.getSizeArrayWrapper();
         int[] unpackingArray = new int[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
-            unpackingArray[i] = arrayWrapper.getValue(i);
+            unpackingArray[i] = wrapper.getValue(i);
         }
         return unpackingArray;
     }
 
-    private void setValuesInWrapperArray(ArrayWrapper arrayWrapper, int[] source) {
-        for (int i = 0; i < source.length; i++) {
-            arrayWrapper.setValue(i, source[i]);
-        }
-    }
-
-
-    public ArrayWrapper findFibonacciNumberInArray(ArrayWrapper arrayWrapper) {
-        int[] source = unpackArray(arrayWrapper);
+    public Wrapper findFibonacciNumberInArray(Wrapper wrapper) {
+        int[] source = unpackArray(wrapper);
         int creatingArrayLength = findCreatingArrayLength(source);
         int[] creatingArray = new int[creatingArrayLength];
         int creatingArrayIndex = 0;
@@ -70,7 +63,7 @@ public class ArrayCalculator {
                 creatingArrayIndex++;
             }
         }
-        return new ArrayWrapperImpl(creatingArray);
+        return new ArrayWrapper(creatingArray);
     }
 
     private int findCreatingArrayLength(int[] source) {

@@ -1,56 +1,36 @@
 package com.epam.array.wrapper;
 
-import com.epam.array.wrapper.data.ArrayWrapperFactory;
-import com.epam.array.wrapper.data.ArrayWrapperFactoryImpl;
-import com.epam.array.wrapper.data.entity.ArrayWrapper;
-import com.epam.array.wrapper.data.entity.type.ArrayFillerType;
+import com.epam.array.wrapper.data.DataReaderFactory;
+import com.epam.array.wrapper.data.DataReaderFactoryImpl;
+import com.epam.array.wrapper.data.reader.type.DataReadable;
+import com.epam.array.wrapper.data.reader.type.DataReadingLocation;
+import com.epam.array.wrapper.exception.DataException;
 import com.epam.array.wrapper.logic.ArrayCalculator;
+import com.epam.array.wrapper.model.ArrayWrapperCreator;
+import com.epam.array.wrapper.model.ArrayWrapperCreatorImpl;
+import com.epam.array.wrapper.model.entity.ArrayWrapper;
+import com.epam.array.wrapper.model.entity.Wrapper;
 import com.epam.array.wrapper.view.ArrayPrinterFactory;
 import com.epam.array.wrapper.view.ArrayPrinterFactoryImpl;
 import com.epam.array.wrapper.view.type.ArrayPrinter;
 import com.epam.array.wrapper.view.type.ArrayPrinterType;
 
 public class Runner {
-    public static void main(String[] args) {
-        //Filling in using the console.
-        ArrayWrapperFactory arrayWrapperFactory = new ArrayWrapperFactoryImpl();
-        ArrayWrapper consoleArrayWrapper = arrayWrapperFactory.create(4);
-        consoleArrayWrapper.fillArrayWrapper(ArrayFillerType.CONSOLE);
+    public static void main(String[] args) throws DataException {
+        DataReaderFactory dataReaderFactory = new DataReaderFactoryImpl();
+        DataReadable reader = dataReaderFactory.create(DataReadingLocation.RANDOM);
+        ArrayWrapperCreator wrapperCreator = new ArrayWrapperCreatorImpl();
+        Wrapper arrayWrapper = wrapperCreator.create(reader);
 
-        //Printing in using the console
         ArrayPrinterFactory printerFactory = new ArrayPrinterFactoryImpl();
-        ArrayPrinter printerConsole = printerFactory.create(ArrayPrinterType.CONSOLE);
-        printerConsole.print(consoleArrayWrapper);
+        ArrayPrinter printer = printerFactory.create(ArrayPrinterType.CONSOLE);
+        printer.print(arrayWrapper);
 
         ArrayCalculator calculator = new ArrayCalculator();
-        calculator.quickSort(consoleArrayWrapper);
-        printerConsole.print(consoleArrayWrapper);
+        Wrapper sortWrapper = calculator.quickSort(arrayWrapper);
+        printer.print(sortWrapper);
 
-        ArrayWrapper fibonacciNumberInArray = calculator.findFibonacciNumberInArray(consoleArrayWrapper);
-        printerConsole.print(fibonacciNumberInArray);
-
-        //Filling in using the random
-        ArrayWrapper randomArrayWrapper = arrayWrapperFactory.create(5);
-        randomArrayWrapper.fillArrayWrapper(ArrayFillerType.RANDOM);
-        printerConsole.print(randomArrayWrapper);
-
-        calculator.quickSort(randomArrayWrapper);
-        printerConsole.print(randomArrayWrapper);
-
-        fibonacciNumberInArray = calculator.findFibonacciNumberInArray(randomArrayWrapper);
-        printerConsole.print(fibonacciNumberInArray);
-
-        //Filling in using the file
-        ArrayWrapper fileArrayWrapper = arrayWrapperFactory.create(4);
-        fileArrayWrapper.fillArrayWrapper(ArrayFillerType.FILE);
-
-        ArrayPrinter printerFile = printerFactory.create(ArrayPrinterType.FILE);
-        printerFile.print(fileArrayWrapper);
-
-        calculator.quickSort(fileArrayWrapper);
-        printerConsole.print(fileArrayWrapper);
-
-        fibonacciNumberInArray = calculator.findFibonacciNumberInArray(fileArrayWrapper);
-        printerConsole.print(fibonacciNumberInArray);
+        Wrapper fibonacciWrapper = calculator.findFibonacciNumberInArray(arrayWrapper);
+        printer.print(fibonacciWrapper);
     }
 }
