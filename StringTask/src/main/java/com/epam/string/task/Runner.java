@@ -18,7 +18,7 @@ import com.epam.string.task.view.type.StringPrinterType;
 public class Runner {
     public static void main(String[] args) throws DataException {
         DataAcquirerFactory dataAcquirerFactory = new DataAcquirerFactoryImpl();
-        DataAcquirer dataAcquirer = dataAcquirerFactory.create(DataReadingLocation.CONSOLE);
+        DataAcquirer dataAcquirer = dataAcquirerFactory.create(DataReadingLocation.FILE);
         String data = dataAcquirer.getData();
 
         ParserFactory parserFactory = new ParserFactoryImpl();
