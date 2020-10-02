@@ -1,4 +1,4 @@
-package com.epam.string.task.logic.parser;
+package com.epam.string.task.logic.parser.type;
 
 public interface StringParser {
     String changeStringByRule(String data);

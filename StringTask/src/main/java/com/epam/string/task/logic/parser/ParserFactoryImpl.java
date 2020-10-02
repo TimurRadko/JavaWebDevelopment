@@ -3,6 +3,7 @@ package com.epam.string.task.logic.parser;
 import com.epam.string.task.logic.parser.type.ParserType;
 import com.epam.string.task.logic.parser.type.RegexParser;
 import com.epam.string.task.logic.parser.type.StringMethodsParser;
+import com.epam.string.task.logic.parser.type.StringParser;
 
 public class ParserFactoryImpl implements ParserFactory {
 

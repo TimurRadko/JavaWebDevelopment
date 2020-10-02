@@ -3,7 +3,7 @@ package com.epam.array.wrapper.data;
 import com.epam.array.wrapper.data.reader.type.*;
 
 public class DataReaderFactoryImpl implements DataReaderFactory {
-    private static final String FILE_PATH = "src/main/java/com/epam/array/wrapper/input.txt";
+    private static final String FILE_PATH = "src/data/input.txt";
 
     @Override
     public DataReadable create(DataReadingLocation readingLocation) {

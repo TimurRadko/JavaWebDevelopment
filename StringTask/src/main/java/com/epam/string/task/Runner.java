@@ -8,7 +8,7 @@ import com.epam.string.task.exception.DataException;
 import com.epam.string.task.logic.StringCalculator;
 import com.epam.string.task.logic.parser.ParserFactory;
 import com.epam.string.task.logic.parser.ParserFactoryImpl;
-import com.epam.string.task.logic.parser.StringParser;
+import com.epam.string.task.logic.parser.type.StringParser;
 import com.epam.string.task.logic.parser.type.ParserType;
 import com.epam.string.task.view.StringPrinterFactory;
 import com.epam.string.task.view.StringPrinterFactoryImpl;
@@ -18,7 +18,7 @@ import com.epam.string.task.view.type.StringPrinterType;
 public class Runner {
     public static void main(String[] args) throws DataException {
         DataAcquirerFactory dataAcquirerFactory = new DataAcquirerFactoryImpl();
-        DataAcquirer dataAcquirer = dataAcquirerFactory.create(DataReadingLocation.FILE);
+        DataAcquirer dataAcquirer = dataAcquirerFactory.create(DataReadingLocation.CONSOLE);
         String data = dataAcquirer.getData();
 
         ParserFactory parserFactory = new ParserFactoryImpl();

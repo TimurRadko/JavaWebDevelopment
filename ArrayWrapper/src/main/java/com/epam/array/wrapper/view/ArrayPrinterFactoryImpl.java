@@ -6,7 +6,7 @@ import com.epam.array.wrapper.view.type.ArrayPrinterFile;
 import com.epam.array.wrapper.view.type.ArrayPrinterType;
 
 public class ArrayPrinterFactoryImpl implements ArrayPrinterFactory {
-    private static final String FILE_PATH = "src/main/java/com/epam/array/wrapper/output.txt";
+    private static final String FILE_PATH = "src/data/output.txt";
 
     public ArrayPrinter create(ArrayPrinterType printerType) {
         switch (printerType) {
