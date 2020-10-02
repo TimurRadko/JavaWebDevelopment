@@ -20,7 +20,7 @@ public class ArrayPrinterFile implements ArrayPrinter {
         try (FileWriter writer = new FileWriter(filename)) {
                 writer.write(Arrays.toString(arrayForPrinting));
         } catch (IOException e) {
-            throw new DataException("File not found", e.getCause());
+            throw new DataException("File not found", e);
         }
     }
 

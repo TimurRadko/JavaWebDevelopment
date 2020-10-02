@@ -17,7 +17,7 @@ public class FileStringPrinter implements StringPrinter {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write(result);
         } catch (IOException e) {
-            throw new DataException("File not found", e.getCause());
+            throw new DataException("File not found", e);
         }
     }
 }

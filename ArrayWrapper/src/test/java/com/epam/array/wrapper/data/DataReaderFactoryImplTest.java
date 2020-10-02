@@ -11,6 +11,6 @@ public class DataReaderFactoryImplTest {
     @Test(expected = DataException.class)
     public void testReadShouldThrowExceptionWhenFileNotExists() throws DataException {
         DataReadable reader = new FileDataReader(FAILED_PATH);
-        int[] actualArray = reader.read();
+        reader.read();
     }
 }

@@ -20,7 +20,7 @@ public class ConsoleDataReader implements DataReadable {
                 filledList.add(number);
             }
         } catch (IOException e) {
-            throw new DataException("You enter invalid data. Cause of exception is ", e.getCause());
+            throw new DataException("You enter invalid data. Cause of exception is ", e);
         }
         return convertListToArray(filledList);
     }

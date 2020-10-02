@@ -21,7 +21,7 @@ public class FileDataAcquirer implements DataAcquirer {
                 builder.append(line);
             }
         } catch (IOException e) {
-            throw new DataException("File not found.", e.getCause());
+            throw new DataException("File not found.", e);
         }
         return builder.toString();
     }

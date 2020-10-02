@@ -18,7 +18,7 @@ public class ConsoleDataAcquirer implements DataAcquirer {
             } while (reader.ready());
             builder.append(line);
         } catch (IOException e) {
-            throw new DataException("Data Exception", e.getCause());
+            throw new DataException("Data Exception", e);
         }
         return builder.toString();
     }
