@@ -1,4 +1,4 @@
-package com.epam.string.task.data.acquirer.type;
+package com.epam.string.task.data;
 
 import com.epam.string.task.exception.DataException;
 import org.junit.Assert;

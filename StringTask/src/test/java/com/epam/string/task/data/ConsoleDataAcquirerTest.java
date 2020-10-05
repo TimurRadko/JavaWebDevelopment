@@ -1,5 +1,7 @@
-package com.epam.string.task.data.acquirer.type;
+package com.epam.string.task.data;
 
+import com.epam.string.task.data.ConsoleDataAcquirer;
+import com.epam.string.task.data.DataAcquirer;
 import com.epam.string.task.exception.DataException;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,12 +15,14 @@ public class ConsoleDataAcquirerTest {
     public void testGetDataShouldReceiveCorrectData() throws DataException {
         DataAcquirer consoleDataAcquirer = new ConsoleDataAcquirer();
         String receivedData = "12345abcde";
-        getTestingString(receivedData);
+        prepareTestingString(receivedData);
+
         consoleDataAcquirer.getData();
+
         Assert.assertEquals(EXPECTED_DATA, receivedData);
     }
 
-    private void getTestingString(String data) {
+    private void prepareTestingString(String data) {
         ByteArrayInputStream is = new ByteArrayInputStream(data.getBytes());
         System.setIn(is);
     }

@@ -1,4 +1,4 @@
-package com.epam.string.task.view.type;
+package com.epam.string.task.view;
 
 public class ConsoleStringPrinter implements StringPrinter {
 

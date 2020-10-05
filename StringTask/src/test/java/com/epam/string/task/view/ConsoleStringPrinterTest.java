@@ -1,6 +1,8 @@
-package com.epam.string.task.view.type;
+package com.epam.string.task.view;
 
 import com.epam.string.task.exception.DataException;
+import com.epam.string.task.view.ConsoleStringPrinter;
+import com.epam.string.task.view.StringPrinter;
 import org.junit.Assert;
 import org.junit.Test;
 
