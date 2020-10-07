@@ -1,14 +1,13 @@
 package com.epam.string.task.logic.parser;
 
-import com.epam.string.task.logic.parser.type.ParserType;
-import com.epam.string.task.logic.parser.type.RegexParser;
-import com.epam.string.task.logic.parser.type.StringMethodsParser;
-import com.epam.string.task.logic.parser.type.StringParser;
+import com.epam.string.task.logic.parser.type.*;
 
 public class ParserFactoryImpl implements ParserFactory {
 
     public StringParser create(ParserType parserType) {
         switch(parserType) {
+            case CHAR_METHODS:
+                return new CharMethodsParser();
             case STRING_METHODS:
                 return new StringMethodsParser();
             case REGEX:
