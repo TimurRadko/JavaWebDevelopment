@@ -2,12 +2,13 @@ package com.epam.string.task.logic.parser;
 
 import com.epam.string.task.logic.parser.type.ParserType;
 import com.epam.string.task.logic.parser.type.CharMethodsParser;
+import com.epam.string.task.logic.parser.type.StringMethodsParser;
 import com.epam.string.task.logic.parser.type.StringParser;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ParserFactoryImplTest {
-    private static final StringParser EXPECTED_PARSER = new CharMethodsParser();
+    private static final StringParser EXPECTED_PARSER = new StringMethodsParser();
 
     @Test
     public void testCreateShouldCreateEntity() {

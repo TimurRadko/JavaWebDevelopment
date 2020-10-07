@@ -1,7 +1,5 @@
 package com.epam.string.task.view.factory;
 
-import com.epam.string.task.data.factory.ConsoleDataAcquirerFactory;
-import com.epam.string.task.data.factory.DataAcquirerFactory;
 import org.junit.Assert;
 import org.junit.Test;
 
